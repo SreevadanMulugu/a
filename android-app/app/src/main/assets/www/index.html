@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>BitWallet (Offline)</title>
+    <style>body{font-family:Arial,Helvetica,sans-serif;background:#0b0e11;color:#e8e9ea;padding:20px} .card{background:#12161c;padding:16px;border-radius:12px;margin-bottom:12px}</style>
+  </head>
+  <body>
+    <h1>BitWallet (Demo)</h1>
+    <div class="card"><h3>Receive (Testnet)</h3><p>This bundled demo is offline. For real network, host a backend or use a public node.</p></div>
+    <div class="card"><h3>Fiat (UPI Demo)</h3>
+      <p>Amount (INR): <input id="amt" value="100"/></p>
+      <p>Payee VPA: <input id="vpa" value="merchant@bank"/></p>
+      <button onclick="pay()">Pay with UPI</button>
+      <p id="msg"></p>
+    </div>
+    <script>
+      function makeUpi(pa, pn, am, tn) {
+        const params = new URLSearchParams({pa: pa, pn: pn, am: am, tn: tn, cu: 'INR'});
+        return 'upi://pay?' + params.toString();
+      }
+      function pay() {
+        const pa = document.getElementById('vpa').value;
+        const am = document.getElementById('amt').value;
+        const uri = makeUpi(pa, 'Demo Merchant', am, 'Top-up');
+        // Attempt to open UPI app (Android WebView will trigger intent handler)
+        window.location.href = uri;
+        document.getElementById('msg').innerText = 'Attempted to open UPI app...';
+      }
+    </script>
+  </body>
+</html>
