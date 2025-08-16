@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bitcoin Wallet (Testnet + Fiat Sandbox)</title>
+    <style>
+      body { font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Arial; margin:0; background:#0b0e11; color:#e8e9ea }
+      .container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+      .nav { display:flex; gap:10px; margin-bottom:12px; }
+      .nav button { padding:10px 12px; border:0; border-radius:10px; background:#1b2330; color:#c9d2da; cursor:pointer }
+      .nav button.active { background:#2b85ff; color:white; }
+      .card { background:#12161c; border:1px solid #1f2630; border-radius:18px; padding:16px; margin:12px 0; }
+      input { width:100%; padding:10px; border-radius:10px; border:1px solid #2a3441; background:#0f1318; color:#e8e9ea; }
+      label { display:block; margin:6px 0; color:#9aa4ad }
+      .row { display:flex; flex-wrap:wrap; gap:12px }
+      .row > * { flex:1 1 280px }
+      button.primary { padding:12px 14px; border-radius:12px; border:0; background:#2b85ff; color:white; cursor:pointer; }
+      button.secondary { padding:12px 14px; border-radius:12px; border:0; background:#263241; color:#c9d2da; cursor:pointer; }
+      code { background:#0f1318; padding:2px 6px; border-radius:8px; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
